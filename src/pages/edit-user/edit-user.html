@@ -1,0 +1,79 @@
+<!--
+  Generated template for the AddNewUser page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>Edit User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+
+  <ion-list>
+    <form [formGroup]="EditUserForm">
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" formControlName="first_name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.first_name.valid && (EditUserForm.controls.first_name.dirty || submitAttempt)">
+        <p class="invalid">Please enter a valid FirstName.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" formControlName="last_name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.last_name.valid && (EditUserForm.controls.last_name.dirty || submitAttempt)">
+        <p class="invalid">Please enter a valid LastName.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+        <span>It should be unique to every user.</span>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.username.valid && (EditUserForm.controls.username.dirty || submitAttempt)">
+        <p class="invalid">Please enter a valid UserName.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+        <span>It should be unique to every user.</span>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.email.valid && (EditUserForm.controls.email.dirty || submitAttempt)">
+        <p class="invalid">Please enter a valid Email.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>OLd Password</ion-label>
+        <ion-input type="password" formControlName="oldpass"></ion-input>
+        <span>Minimum 4 characters.</span>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password_text"></ion-input>
+        <span>Minimum 4 characters.</span>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.password_text.valid && (EditUserForm.controls.password_text.dirty || submitAttempt)">
+        <p class="invalid">Please enter a valid Password.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type="password" formControlName="pass_confirm"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditUserForm.controls.pass_confirm.valid && (EditUserForm.controls.pass_confirm.dirty || submitAttempt)">
+        <p class="invalid">Please enter a same Password Again</p>
+      </ion-item>
+    </form>
+  </ion-list>
+
+  <div padding="">
+    <button block="" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block="" (click)="updateaction()"><span class="button-inner">Create Staff</span>
+  </button>
+  </div>
+
+</ion-content>

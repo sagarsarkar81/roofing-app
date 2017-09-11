@@ -1,0 +1,60 @@
+<!--
+  Generated template for the UserManagement page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-bounce>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Management</ion-title>
+
+    <Button class="settings" (click)="presentPopoverSort($event)"><i class="material-icons">sort</i></Button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <!--<ion-searchbar [showCancelButton]="shouldShowCancel" (input)="search($event)" (ionCancel)="onCancel($event)">>
+  </ion-searchbar>-->
+<ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="search($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+
+  <ion-card class="user_card" *ngFor="let dt of alluser" >
+    <ion-card-content>
+      <Button class="settings" (click)="presentPopover($event,dt.id,dt.first_name,dt.last_name,dt.username,dt.email)"><i class="material-icons">more_vert</i></Button>
+      <ion-row>
+        <ion-col col col-12><span>Name :</span>{{dt.first_name}} {{dt.last_name}}</ion-col>
+        <ion-col col col-12><span>User Name :</span>{{dt.username}}</ion-col>
+        <ion-col col col-12><span>Employee Code :</span>{{dt.employee_code}}</ion-col>
+        <ion-col col col-12><span>Email :</span>{{dt.email}}</ion-col>
+        <ion-col col col-12><span>Role :</span>{{dt.display_name}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="adduser()"><ion-icon name="add"></ion-icon></button>
+
+  </ion-fab>
+
+
+
+
+</ion-content>

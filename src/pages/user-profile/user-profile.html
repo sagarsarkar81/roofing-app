@@ -1,0 +1,129 @@
+<!--
+  Generated template for the UserProfile page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-bounce>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="avatar" *ngIf="isremote" (click)="openCamera()">
+    <img src="{{photo}}" />
+  </div>
+  <div class="avatar" *ngIf="iscam" (click)="openCamera()">
+    <img src="{{base64Image}}" />
+  </div>
+  <h4 class="u_title">{{name}}</h4>
+  <h6 class="mail_id">{{email}}</h6>
+
+
+
+  <ion-grid>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Employ Code</ion-label>
+        <ion-input type="text" [(ngModel)]="employee_code"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Father Name</ion-label>
+        <ion-input type="text" [(ngModel)]="father_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Mother Name</ion-label>
+        <ion-input type="text" [(ngModel)]="mother_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Date of Birth</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date_of_birth"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Date of Joining</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date_of_joining"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Contact Number</ion-label>
+        <ion-input type="number" [(ngModel)]="contact_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Alternate Contact Number</ion-label>
+        <ion-input type="number" [(ngModel)]="alternate_contact_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Alternate Email</ion-label>
+        <ion-input type="email" [(ngModel)]="alternate_email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Present Address</ion-label>
+        <ion-textarea [(ngModel)]="present_address"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Parmanet Address</ion-label>
+        <ion-textarea [(ngModel)]="permanent_address"></ion-textarea>
+      </ion-item>
+
+      <button ion-button full (click)="chooseFile()">Upload Profile Photo</button>
+
+
+      <ion-row>
+        <ion-item col col-6>
+          <ion-label floating>Facebook profile</ion-label>
+          <ion-input type="text" [(ngModel)]="facebook_link"></ion-input>
+        </ion-item>
+
+        <ion-item col col-6>
+          <ion-label floating>Twitter Prifile</ion-label>
+          <ion-input type="text" [(ngModel)]="twitter_link"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item col col-6>
+          <ion-label floating>Blogger Profile</ion-label>
+          <ion-input type="text" [(ngModel)]="blogger_link"></ion-input>
+        </ion-item>
+
+        <ion-item col col-6>
+          <ion-label floating>Linkedin Profile</ion-label>
+          <ion-input type="text" [(ngModel)]="linkedin_link"></ion-input>
+        </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-item col col-6>
+          <ion-label floating>Google Plus Profile</ion-label>
+          <ion-input type="text" [(ngModel)]="googleplus_link"></ion-input>
+        </ion-item>
+
+      </ion-row>
+
+    </ion-list>
+
+  </ion-grid>
+
+  <div padding="">
+    <button block="" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block="" (click)="submitaction()"><span class="button-inner">Save</span>
+  </button>
+  </div>
+
+</ion-content>

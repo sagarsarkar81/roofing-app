@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>Individual Project view</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+  <ion-card class="user_card" *ngFor="let g of arr.data">
+    <ion-card-content>
+      <Button class="pos" (click)="allfile(g.id)"> <i class="material-icons">attach_file</i></Button>
+      
+
+      <ion-row class="rowpos">
+        <ion-col col col-12><span>Title :</span>{{g.title}}</ion-col>
+        <ion-col col col-12><span>Client Name :</span>{{g.client_name}}</ion-col>
+        <ion-col col col-12><span>Client Address :</span>{{g.client_address}}</ion-col>
+        <ion-col col col-12><span>Client Address City :</span>{{g.client_address_city}}</ion-col>
+        <ion-col col col-12><span>Client Address State :</span>{{g.client_address_state}}</ion-col>
+        <ion-col col col-12><span>Deposit Amount :</span>{{g.deposit_amount}}</ion-col>
+        <ion-col col col-12><span>Project Code :</span>{{g.project_code}}</ion-col>
+        <ion-col col col-12><span>Start Date :</span>{{g.start_date}}</ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

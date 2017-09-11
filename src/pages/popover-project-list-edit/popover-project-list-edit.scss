@@ -1,0 +1,23 @@
+page-popover-project-list-edit {
+
+ion-content { padding: 0 !important;}
+.scroll-content { padding: 0 !important;
+    ion-list { margin-bottom: 0 !important;
+        button {
+            .item-inner {
+                .input-wrapper {
+                    ion-label {
+                        i { vertical-align: top; line-height: 24px; margin-right: 10px;
+                            &.view { color:#3960d1;}
+                            &.edit { color:#27c20a;}
+                            &.delete { color:#d74548;}
+                        }
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+    }
+}
+
+}

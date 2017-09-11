@@ -1,0 +1,30 @@
+page-all-projects {
+    .user_card { margin-bottom: 15px; box-shadow: 0 3px 5px #999; border-radius: 6px; border: 1px solid #ccc;
+        ion-card-content { padding: 5px;
+            ion-col { padding-bottom: 0; padding-top: 0;
+                span { font-weight: bold; margin-right: 15px;}
+            }
+        }    
+    }
+
+
+    .settings { float: right; padding: 5px; height: 30px; box-shadow: none; width: 25px; background: none;}
+
+
+
+.toolbar.toolbar-md ion-title  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px 50px;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+
+    /*padding-top: 20px;*/
+    height: calc(37px + 20px);
+    min-height: calc(37px + 20px);
+    }
+}

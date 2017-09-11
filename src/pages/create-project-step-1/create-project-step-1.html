@@ -1,0 +1,124 @@
+<!--
+  Generated template for the CreateProjectStep1 page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>Create Project Step-1</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+  <ion-grid>
+    <form [formGroup]="Step1">
+      <ion-list>
+
+        <!--    <ion-item>
+          <ion-label floating>Project Code</ion-label>
+          <ion-input type="text" disabled="true" value="054233"></ion-input>
+        </ion-item>-->
+
+      </ion-list>
+
+
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Project Title</ion-label>
+          <ion-input type="text" formControlName="title"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.title.valid && (Step1.controls.title.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Project Name.</span>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Client Name*</ion-label>
+          <ion-input type="text" formControlName="client_name"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.client_name.valid && (Step1.controls.client_name.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Name.</span>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Address 1*</ion-label>
+          <ion-textarea formControlName="client_address1"></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.client_address1.valid && (Step1.controls.client_address1.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Address.</span>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Address 2</ion-label>
+          <ion-textarea formControlName="client_address2"></ion-textarea>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.client_address2.valid && (Step1.controls.client_address2.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Address.</span>
+        </ion-item>
+
+        
+          <ion-item >
+            <ion-label floating>City*</ion-label>
+            <ion-input type="text" formControlName="client_address_city"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!Step1.controls.client_address_city.valid && (Step1.controls.client_address_city.dirty || submitAttempt)">
+            <span class="invalid">Please enter a valid City.</span>
+          </ion-item>
+          <ion-item >
+            <ion-label floating>State*</ion-label>
+            <!-- <ion-input type="text" formControlName="client_address_state"></ion-input> -->
+            <ion-select [(ngModel)]="state" [ngModelOptions]="{standalone: true}">
+              <ion-option value="1" selected="true">Select State</ion-option>
+              <ion-option *ngFor="let statename of statelist" value="{{statename.name}}">{{statename.name}}</ion-option>
+
+
+            </ion-select>
+          </ion-item>
+
+        
+
+        
+          <ion-item >
+            <ion-label floating>Zip*</ion-label>
+            <ion-input type="number" formControlName="client_address_zip"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!Step1.controls.client_address_zip.valid && (Step1.controls.client_address_zip.dirty || submitAttempt)">
+            <span class="invalid">Please enter a valid Zip.</span>
+          </ion-item>
+          <ion-item >
+            <ion-label floating>Country*</ion-label>
+            <ion-input type="text" formControlName="client_address_country" [readonly]="isReadonly"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!Step1.controls.client_address_country.valid && (Step1.controls.client_address_country.dirty || submitAttempt)">
+            <span class="invalid">Please enter a valid Country.</span>
+          </ion-item>
+        
+
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input type="number" formControlName="client_phone"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.client_phone.valid && (Step1.controls.client_phone.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Phone.</span>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" formControlName="client_email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!Step1.controls.client_email.valid && (Step1.controls.client_email.dirty || submitAttempt)">
+          <span class="invalid">Please enter a valid Email.</span>
+        </ion-item>
+
+      </ion-list>
+    </form>
+  </ion-grid>
+
+  <div padding="">
+    <button block="" (click)="createprojectstep2()" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block=""><span class="button-inner">Next</span>
+  </button>
+  </div>
+
+</ion-content>

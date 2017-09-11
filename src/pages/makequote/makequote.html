@@ -1,0 +1,110 @@
+<!--
+  Generated template for the AddNewUser page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-spinner icon="ripple" class="spinner-assertive main_spin" *ngIf="showspinner"></ion-spinner>
+<ion-header>
+
+  <ion-navbar color="primary">
+    <!-- <button ion-button (click)="popView()">
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Add Quotation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Quote Title</ion-label>
+      <ion-input type="text" [(ngModel)]="quote_title" [class.invalid]="submitAttempt"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt">
+      <p class="invalid">Please enter a Quote Title.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>quote Description</ion-label>
+      <ion-input type="text" [(ngModel)]="quote_description" [class.invalid]="submitAttempt2"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt2">
+      <p class="invalid">Please enter Quote Description.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Material Estimation Cost</ion-label>
+      <ion-input type="number" [(ngModel)]="aprox_cost" [class.invalid]="submitAttempt3"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt3">
+      <p class="invalid">Please Enter Material Cost.</p>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label floating>exact_cost</ion-label>
+      <ion-input type="number" [(ngModel)]="exact_cost" [class.invalid]="submitAttempt4"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt4">
+      <p class="invalid">Please enter  Exact Cost.</p>
+    </ion-item>-->
+    <ion-item>
+      <ion-label floating>Confirmed Delivery Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="aprox_date" [class.invalid]="submitAttempt5"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt5">
+      <p class="invalid">Please enter Confirmed Date.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Estimated Delivery Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="exact_date" [class.invalid]="submitAttempt6"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt6">
+      <p class="invalid">Please enter Estimated Date.</p>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label floating>total_cost</ion-label>
+      <ion-input type="number" [(ngModel)]="total_cost" [class.invalid]="submitAttempt7"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt7">
+      <p class="invalid">Please enter Total Cost.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>delivery_date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="delivery_date" [class.invalid]="submitAttempt8"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt8">
+      <p class="invalid">Please enter Delivery Date.</p>
+    </ion-item>-->
+    <ion-item>
+      <ion-label>Is Material sortage</ion-label>
+      <ion-checkbox [(ngModel)]="is_material_shortage" (ionChange)="updateCucumber()" [class.invalid]="submitAttempt9"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt9">
+      <p class="invalid">Please check Material Sortage.</p>
+    </ion-item>
+    <ion-item *ngIf="is_material_shortage">
+      <ion-label floating>Storage Note</ion-label>
+      <ion-input type="text" [(ngModel)]="shortage_note" [class.invalid]="submitAttempt10"></ion-input>
+      <ion-item *ngIf="submitAttempt10">
+        <p class="invalid">Please enter Sortage Note.</p>
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Other Note</ion-label>
+      <ion-input type="text" [(ngModel)]="other_note" [class.invalid]="submitAttempt11"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="submitAttempt11">
+      <p class="invalid">Please enter Other Note.</p>
+    </ion-item>
+    <button ion-button full (click)="chooseFile()" [class.lightblue]="!shod" [class.clorchange]="shod" >Upload Material List<ion-icon *ngIf="shod" style="padding-left: 10px;" name="checkmark-circle"></ion-icon></button>
+
+  </ion-list>
+
+  <div padding="">
+    <button block="" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block="" (click)="updateaction()"><span class="button-inner">Save</span>
+  </button>
+  </div>
+
+</ion-content>

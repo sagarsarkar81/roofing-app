@@ -1,0 +1,76 @@
+<!--
+  Generated template for the CreateProject page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create Project</ion-title>
+    <Button class="settings" (click)="checkAll()">Check All</Button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+
+  <h6>Before creating a new project, please ensure that you have the following documents ready for upload.</h6>
+
+
+  <ion-item class="cP-row">
+    <ion-label>Completed and signed Contingency Agreement</ion-label>
+    <ion-checkbox [(ngModel)]="options[0].checked" [id]="options[0].value" (ionChange)="notify($event,options[0].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Deposit Check / Completed and Signed Credit Card Authorization Form</ion-label>
+    <ion-checkbox [(ngModel)]="options[1].checked" [id]="options[1].value" (ionChange)="notify($event,options[1].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Scope of Work form</ion-label>
+    <ion-checkbox [(ngModel)]="options[2].checked" [id]="options[1].value" (ionChange)="notify($event,options[2].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Insurance Summary</ion-label>
+    <ion-checkbox [(ngModel)]="options[3].checked" (ionChange)="notify($event,options[3].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Root Scope (Hand Drawing or Order Roof Scope)</ion-label>
+    <ion-checkbox [(ngModel)]="options[4].checked" (ionChange)="notify($event,options[4].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Tic Sheet</ion-label>
+    <ion-checkbox [(ngModel)]="options[5].checked" (ionChange)="notify($event,options[5].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Roof, Gutter and other necessary drawings</ion-label>
+    <ion-checkbox [(ngModel)]="options[6].checked" (ionChange)="notify($event,options[6].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Work Order</ion-label>
+    <ion-checkbox [(ngModel)]="options[7].checked" (ionChange)="notify($event,options[7].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <ion-item class="cP-row">
+    <ion-label>Permit (if applicable)</ion-label>
+    <ion-checkbox [(ngModel)]="options[8].checked" (ionChange)="notify($event,options[8].value)" readonly></ion-checkbox>
+  </ion-item>
+
+  <div padding="">
+    <button block="" (click)="createprojectstep1()" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block=""><span class="button-inner">Submit Query</span>
+  </button>
+  </div>
+
+
+</ion-content>

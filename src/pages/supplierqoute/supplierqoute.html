@@ -1,0 +1,73 @@
+<!--
+  Generated template for the AllProjects page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-bounce>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All Supplier quote</ion-title>
+
+    <!--<Button class="settings" (click)="presentPopoverProjectSort($event)"><i class="material-icons">swap_vert</i></Button>
+    <Button class="settings" (click)="presentPopoverProjectListFilter($event)"><i class="material-icons">filter_list</i></Button>-->
+  </ion-navbar>
+
+
+
+
+
+</ion-header>
+
+
+<ion-content>
+
+
+   <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="search($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+
+
+
+  <ion-card class="user_card" *ngFor="let g of arr  " (click)="presentProfileModal(g.id)">
+    <ion-card-content>
+      <!--  <Button class="settings" (click)="presentPopoverProjectListEdit($event)"><i class="material-icons">more_vert</i></Button>-->
+      <ion-row>
+        <ion-col col col-12><span>Project Title :</span>{{g.title}}</ion-col>
+        <ion-col col col-12><span>Project Description :</span>{{g.quote_description}}</ion-col>
+        <ion-col col col-12><span>Project Code :</span>{{g.project_code}}</ion-col>
+        <ion-col col col-12><span>Client Name:</span>{{g.client_name}}</ion-col>
+        <ion-col col col-12><span>Address :</span>{{g.client_address}}</ion-col>
+        <ion-col col col-12><span>City :</span>{{g.client_address_city}}</ion-col>
+        <ion-col col col-12><span>State :</span>{{g.client_address_state}}</ion-col>
+        <ion-col col col-12><span>Client Address:</span>{{g.client_address_zip}}</ion-col>
+        <ion-col col col-12><span>Sales Person:</span>{{g.sales_person}}</ion-col>
+        <ion-col col col-12><span>Project $ :</span>{{g.budget}}</ion-col>
+        <ion-col col col-12><span>Deposit :</span>{{g.deposit_amount}}</ion-col>
+        <ion-col col col-12><span>Date :</span>{{g.start_date}}</ion-col>
+
+
+        <!-- <ion-col col col-12><span>Roof Scope :</span>Roof Scope Drawing by Sales Person</ion-col>
+        <ion-col col col-12><span>P.O.# :</span>031502</ion-col>
+
+        <ion-col col col-12><span>Salesman :</span> raja@123456 &nbsp; #jamesgordon </ion-col> -->
+        <ion-col col col-12><span>Status :</span> {{g.project_status}} </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!--   <ion-fab right bottom>
+   <button ion-fab color="primary" (click)="createproject()"><ion-icon name="add"></ion-icon></button>
+
+ </ion-fab>-->
+
+
+</ion-content>

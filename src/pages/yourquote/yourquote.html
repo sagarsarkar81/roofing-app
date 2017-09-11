@@ -1,0 +1,90 @@
+<!--
+  Generated template for the AllProjects page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All Quotes</ion-title>
+
+    <!--  <Button class="settings" (click)="presentPopoverProjectSort($event)"><i class="material-icons">swap_vert</i></Button>
+    <Button class="settings" (click)="presentPopoverProjectListFilter($event)"><i class="material-icons">filter_list</i></Button>-->
+  </ion-navbar>
+
+
+
+
+
+</ion-header>
+
+
+<ion-content no-bounce>
+
+
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="search($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+
+
+
+  <div *ngIf="loged_in!='5'">
+
+    <ion-card class="user_card" *ngFor="let g of arr" (click)="presentProfileModal(g.id)">
+      <ion-card-content>
+        <Button class="settings" (click)="presentPopoverProjectListEdit($event,g.id)" *ngIf="loged_in == '5'"><i class="material-icons">more_vert</i></Button>
+        <ion-row>
+          <ion-col col col-12><span>Project Name :</span>{{g.title}}</ion-col>
+          <ion-col col col-12><span>Description :</span>{{g.description}}</ion-col>
+          <ion-col col col-12><span>Client Name :</span>{{g.client_name}}</ion-col>
+          <!-- <ion-col col col-12><span>Budget $:</span>{{g.budget}}</ion-col>
+        <ion-col col col-12><span>Starting date :</span>{{g.date}}</ion-col> -->
+          <ion-col col col-12 (click)="retrieveImage(g.work_order)"><span>work Order:{{g.work_order}}</span> <i class="material-icons">get_app</i></ion-col>
+
+        <ion-col col col-12><span>City :</span>{{g.client_address_city}}</ion-col>
+        <ion-col col col-12><span>State :</span>{{g.client_address_state}}</ion-col>
+        <ion-col col col-12><span>Client Address:</span>{{g.client_address_zip}}</ion-col>
+          <ion-col col col-12><span>Salesman :</span> {{g.sales_person}} </ion-col>
+          <ion-col col col-12><span>Status :</span> {{g.project_status}} </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="loged_in=='5'">
+    <ion-card class="user_card" *ngFor="let g of arr">
+      <ion-card-content>
+        <Button class="settings" (click)="presentPopoverProjectListEdit($event,g.id)" *ngIf="loged_in == '5'"><i class="material-icons">more_vert</i></Button>
+        <ion-row>
+          <ion-col col col-12><span>Project Name :</span>{{g.title}}</ion-col>
+          <ion-col col col-12><span>Description :</span>{{g.description}}</ion-col>
+          <ion-col col col-12><span>Client Name :</span>{{g.client_name}}</ion-col>
+          <!-- <ion-col col col-12><span>Budget $:</span>{{g.budget}}</ion-col>
+        <ion-col col col-12><span>Starting date :</span>{{g.date}}</ion-col> -->
+          <ion-col col col-12 (click)="retrieveImage(g.work_order)"><span>work Order:{{g.work_order}}</span> <i class="material-icons">get_app</i></ion-col>
+ <ion-col col col-12><span>City :</span>{{g.client_address_city}}</ion-col>
+        <ion-col col col-12><span>State :</span>{{g.client_address_state}}</ion-col>
+        <ion-col col col-12><span>Client Address:</span>{{g.client_address_zip}}</ion-col>
+          <!-- <ion-col col col-12><span>Roof Scope :</span>Roof Scope Drawing by Sales Person</ion-col>
+        <ion-col col col-12><span>P.O.# :</span>031502</ion-col>
+        <ion-col col col-12><span>Date :</span>2017-04-21</ion-col>-->
+          <ion-col col col-12><span>Salesman :</span> {{g.sales_person}} </ion-col>
+          <ion-col col col-12><span>Status :</span> {{g.project_status}} </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-fab right bottom>
+    <!--<button ion-fab color="primary" (click)="createproject()"><ion-icon name="add"></ion-icon></button>-->
+
+  </ion-fab>
+
+
+</ion-content>

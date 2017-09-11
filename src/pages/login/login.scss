@@ -1,0 +1,19 @@
+page-login {
+ .remember {
+     ion-checkbox { margin: 5px 0; vertical-align: middle; padding-left: 12px;
+        .checkbox-icon {
+            .checkbox-inner { padding: 0;}
+        }
+        .item-cover { padding: 0; width: 21px; height: 21px; left: 12px;}
+     }
+ }
+
+ .f_pass {
+     .forgot_password { padding:0; max-height: 2.6rem; margin: 0; text-align: right;
+        span { line-height: 3rem; font-size:1.4rem; text-transform:none; font-weight: normal; }
+        &:active { background: none;}
+      }
+ }
+  
+ 
+}

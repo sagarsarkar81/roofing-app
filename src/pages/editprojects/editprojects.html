@@ -1,0 +1,143 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Edit Projects</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="allfile()">
+        <i class="material-icons">attach_file</i>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+
+  <ion-list>
+    <form [formGroup]="EditProjectForm">
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.title.valid && (EditProjectForm.controls.title.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Client Name</ion-label>
+        <ion-input type="text" formControlName="client_name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_name.valid && (EditProjectForm.controls.client_name.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Client Address</ion-label>
+
+        <ion-textarea formControlName="client_address"></ion-textarea>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_address.valid && (EditProjectForm.controls.client_address.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Client Address City</ion-label>
+        <ion-input type="text" formControlName="client_address_city"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_address_city.valid && (EditProjectForm.controls.client_address_city.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Client Address State</ion-label>
+        <!--ion-input type="text" formControlName="client_address_state"></ion-input-->
+        <ion-select [(ngModel)]="state"  [ngModelOptions]="{standalone: true}">
+        
+                <ion-option *ngFor="let statename of statelist" value="{{statename.name}}">{{statename.name}}</ion-option>
+
+
+        </ion-select>
+      </ion-item>
+      <!--ion-item *ngIf="!EditProjectForm.controls.client_address_state.valid && (EditProjectForm.controls.client_address_state.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item-->
+      <ion-item>
+        <ion-label floating>client_address_zip</ion-label>
+        <ion-input type="text" formControlName="client_address_zip"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_address_zip.valid && (EditProjectForm.controls.client_address_zip.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>client_address_country</ion-label>
+
+         <ion-input type="text" formControlName="client_address_country"  [readonly]="isReadonly"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_address_country.valid && (EditProjectForm.controls.client_address_country.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>client_phone</ion-label>
+        <ion-input type="number" formControlName="client_phone"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_phone.valid && (EditProjectForm.controls.client_phone.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>client_email</ion-label>
+        <ion-input type="email" formControlName="client_email"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.client_email.valid && (EditProjectForm.controls.client_email.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+
+        <ion-textarea formControlName="description"></ion-textarea>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.description.valid && (EditProjectForm.controls.description.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>budget</ion-label>
+        <ion-input type="number" formControlName="budget"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.budget.valid && (EditProjectForm.controls.budget.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>deposit_amount</ion-label>
+        <ion-input type="number" formControlName="deposit_amount"></ion-input>
+
+      </ion-item>
+      <ion-item *ngIf="!EditProjectForm.controls.deposit_amount.valid && (EditProjectForm.controls.deposit_amount.dirty || submitAttempt)">
+        <p class="invalid">this field is required</p>
+      </ion-item>
+      <ion-item *ngIf="logtype!='4'">
+        <ion-label floating>Status</ion-label>
+       <!-- <ion-input type="text" formControlName="project_status"></ion-input>-->
+<ion-select [(ngModel)]="project_status"  [ngModelOptions]="{standalone: true}">
+        
+                <ion-option  value="open">open</ion-option>
+                <ion-option  value="workinprogress">Work in Progress</ion-option>
+                <ion-option  value="onhold">on Hold</ion-option>
+                <ion-option  value="complete">Complete</ion-option>
+
+
+        </ion-select>
+      </ion-item>
+     
+    </form>
+  </ion-list>
+
+  <div padding="">
+    <button block="" color="primary" ion-button="" class="disable-hover button button-md button-default button-default-md button-block button-block-md button-md-primary" ng-reflect-color="primary" ng-reflect-block="" (click)="updateaction()"><span class="button-inner">Save</span>
+  </button>
+  </div>
+
+</ion-content>

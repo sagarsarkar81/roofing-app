@@ -1,0 +1,40 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.list-ios > .item-block:first-child { border-top: none;}
+.invalid  {
+          color:red !important;
+
+        }
+        ion-spinner.main_spin {
+          position: absolute; width:100%; height:100%; top:0; margin-top:0; left:0; margin-left: 0; right:0; bottom: 0; background: rgba(0,0,0,.6);
+          z-index: 99999;
+        }
+
+        ion-spinner.main_spin svg { position: absolute; width:60px; height:60px; top: 50%; margin-top: -30px; left: 50%; margin-left: -30px;}
+
+        .spinner-md-crescent.main_spin circle {stroke:#fff !important};
+
+        .chat_bubble { position: relative;}
+        /*.chat_bubble ion-spinner { position: absolute; width:30px; height:30px; top: 50%; margin-top: -15px; left: 50%; margin-left: -15px;}*/
+        .chat_bubble ion-spinner { position: absolute; width:100%; height:100%; top:0; margin-top:0; left:0; margin-left: 0; right:0; bottom: 0; background: rgba(255,255,255,.8);}
+        .chat_bubble ion-spinner svg { position: absolute; width:30px; height:30px; top: 50%; margin-top: -15px; left: 50%; margin-left: -15px;}
+.iconcls{
+   margin-right: 0 !important;
+   i { vertical-align: top; color:#488aff;}
+}
